@@ -7,7 +7,7 @@ pipeline {
         ansiColor('xterm')
     }
     tools{
-        nodejs "NodeJS15"
+        nodejs "NodeJS14"
     }
 
     stages {
