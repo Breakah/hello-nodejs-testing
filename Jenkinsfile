@@ -21,11 +21,11 @@ pipeline {
                 sh 'yarn test'
                 sh 'yarn ci-test'                
             }
-            //post{
-                //success{
-                    //archiveArtifacts 'coverage/'
-                //}
-            //}          
+            post{
+                success{
+                    archiveArtifacts 'coverage/'
+                }
+            }          
         }
         stage('Deploy') {
             steps {
