@@ -15,8 +15,8 @@ pipeline {
         }
         stage('Test'){
             steps{
-                sh 'yarn test'
-                sh 'yarn ci-test'                
+                sh 'npm test'
+                sh 'npm ci-test'                
             }
             post{
                 always{
@@ -28,7 +28,7 @@ pipeline {
 
         stage('Build') {
             steps {                
-                sh 'yarn'                
+                sh 'npm install'                
             }
             post{
                 success{
