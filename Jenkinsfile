@@ -17,7 +17,7 @@ pipeline {
                 sh 'npm ci-test'                
             }
             post{
-                succes{
+                success{
                     archiveArtifacts 'coverage/'
                 }
             }          
