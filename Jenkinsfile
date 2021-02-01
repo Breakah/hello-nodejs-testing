@@ -7,7 +7,7 @@ pipeline {
         ansiColor('xterm')
     }
     tools{
-        nodejs "NodeJS15"
+        Nodejs "NodeJS15"
     }
 
     stages {
@@ -18,8 +18,8 @@ pipeline {
         }
         stage('Test'){
             steps{
-                sh 'yarn test'
-                sh 'yarn ci-test'                
+                sh 'npm test'
+                sh 'npm ci-test'                
             }
             post{
                 always{
@@ -31,7 +31,7 @@ pipeline {
 
         stage('Build') {
             steps {                
-                sh 'yarn install'                
+                sh 'npm install'                
             }
             post{
                 success{
