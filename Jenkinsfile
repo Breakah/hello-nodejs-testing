@@ -11,18 +11,6 @@ pipeline {
     }
 
     stages {
-        stage('Test'){
-            steps{
-                sh 'npm test'
-                sh 'npm ci-test'                
-            }
-            post{
-                success{
-                    archiveArtifacts 'coverage/'
-                }
-            }          
-        }
-
         stage('Build') {
             steps {                
                 sh 'npm install'                
@@ -33,6 +21,17 @@ pipeline {
                   //  echo ".Jar Guardados en build/libs"
               //  }
             //}            
+        }
+        stage('Test'){
+            steps{
+                sh 'npm test'
+                sh 'npm ci-test'                
+            }
+            post{
+                success{
+                    archiveArtifacts 'coverage/'
+                }
+            }          
         }
         stage('Deploy') {
             steps {
