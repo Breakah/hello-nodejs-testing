@@ -1,9 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent {
-        docker { image 'node:lastest' }
-    }
+    agent any
 
     options {
         ansiColor('xterm')
