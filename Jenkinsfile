@@ -24,8 +24,6 @@ pipeline {
             post{
                 success{
                     archiveArtifacts 'coverage/'
-                    cloverReportDir: 'coverage/site',
-                    cloverReportFileName: 'clover.xml'
                 }
             }          
         }
