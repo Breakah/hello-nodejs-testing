@@ -6,12 +6,14 @@ pipeline {
     options {
         ansiColor('xterm')
     }
+    tools{
+        nodejs "NodeJS15"
+    }
 
     stages {
         stage('Setup'){
             steps{
                 git url:'http://10.250.8.1:8929/root/hello-nodejs-testing.git',branch:'master' 
-                sh 'yarn'
             }            
         }
         stage('Test'){
