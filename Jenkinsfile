@@ -14,13 +14,7 @@ pipeline {
         stage('Build') {
             steps {                
                 sh 'yarn'                
-            }
-            //post{
-                //success{
-                //    archiveArtifacts 'build/libs/*.jar'
-                  //  echo ".Jar Guardados en build/libs"
-              //  }
-            //}            
+            }          
         }
         stage('Test'){
             steps{
@@ -30,9 +24,8 @@ pipeline {
             post{
                 success{
                     archiveArtifacts 'coverage/'
-                    [$class: 'CloverPublisher',
                     cloverReportDir: 'coverage/site',
-                    cloverReportFileName: 'clover.xml']
+                    cloverReportFileName: 'clover.xml'
                 }
             }          
         }
