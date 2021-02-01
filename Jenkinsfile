@@ -30,6 +30,9 @@ pipeline {
             post{
                 success{
                     archiveArtifacts 'coverage/'
+                    $class: 'CloverPublisher',
+                    cloverReportDir: 'coverage/site',
+                    cloverReportFileName: 'clover.xml',
                 }
             }          
         }
