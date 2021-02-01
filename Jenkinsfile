@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {                
-                sh 'npm install'                
+                sh 'yarn'                
             }
             //post{
                 //success{
@@ -24,8 +24,8 @@ pipeline {
         }
         stage('Test'){
             steps{
-                sh 'npm test'
-                sh 'npm ci-test'                
+                sh 'yarn test'
+                sh 'yarn ci-test'                
             }
             post{
                 success{
