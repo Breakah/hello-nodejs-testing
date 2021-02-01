@@ -25,6 +25,7 @@ pipeline {
             }
             post{
                 always{
+                    archiveArtifacts 'coverage/'
                     step([$class: "TapPublisher", testResults: "test.tap"])
                     step([
                     $class: 'CloverPublisher',
