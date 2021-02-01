@@ -11,12 +11,13 @@ pipeline {
         stage('Setup'){
             steps{
                 git url:'http://10.250.8.1:8929/root/hello-nodejs-testing.git',branch:'master' 
+                sh 'yarn'
             }            
         }
         stage('Test'){
             steps{
-                sh 'npm test'
-                sh 'npm ci-test'                
+                sh 'yarn test'
+                sh 'yarn ci-test'                
             }
             post{
                 always{
@@ -28,7 +29,7 @@ pipeline {
 
         stage('Build') {
             steps {                
-                sh 'npm install'                
+                sh 'yarn install'                
             }
             post{
                 success{
