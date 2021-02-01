@@ -6,9 +6,7 @@ pipeline {
     options {
         ansiColor('xterm')
     }
-    agent {
-        docker { image 'node' }
-    }
+
     stages {
         stage('Setup'){
             steps{
