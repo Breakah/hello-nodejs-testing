@@ -23,7 +23,7 @@ pipeline {
             }
             post{
                 success{
-                    archiveArtifacts 'coverage/'
+                    //archiveArtifacts 'coverage/'
                 }
             }          
         }
