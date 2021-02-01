@@ -30,11 +30,7 @@ pipeline {
                 sh 'yarn ci-test'     
                 step([$class: "TapPublisher", testResults: "test.tap"])          
             }
-            post{
-                success{
-                    archiveArtifacts 'coverage/'
-                }
-            }          
+       
         }
         stage('Deploy') {
             steps {
