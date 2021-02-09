@@ -1,0 +1,189 @@
+[
+  {
+    "Target": "yarn.lock",
+    "Type": "yarn",
+    "Vulnerabilities": [
+      {
+        "VulnerabilityID": "GHSA-8j8c-7jfh-h6hx",
+        "PkgName": "js-yaml",
+        "InstalledVersion": "3.2.7",
+        "FixedVersion": "3.13.1",
+        "Layer": {
+          "DiffID": "sha256:be134adad1e54d8fff4bc4b32a0857af99e3b17ca9d2573ed626fe71f70eae08"
+        },
+        "PrimaryURL": "https://github.com/advisories/GHSA-8j8c-7jfh-h6hx",
+        "Title": "Code Injection in js-yaml",
+        "Description": "Versions of `js-yaml` prior to 3.13.1 are vulnerable to Code Injection. The `load()` function may execute arbitrary code injected through a malicious YAML file. Objects that have `toString` as key, JavaScript code as value and are used as explicit mapping keys allow attackers to execute the supplied code through the `load()` function. The `safeLoad()` function is unaffected.\n\nAn example payload is \n`{ toString: !\u003ctag:yaml.org,2002:js/function\u003e 'function (){return Date.now()}' } : 1` \nwhich returns the object \n{\n  \"1553107949161\": 1\n}\n\n\n## Recommendation\n\nUpgrade to version 3.13.1.",
+        "Severity": "HIGH",
+        "References": [
+          "https://github.com/advisories/GHSA-8j8c-7jfh-h6hx",
+          "https://github.com/nodeca/js-yaml/pull/480"
+        ]
+      },
+      {
+        "VulnerabilityID": "GHSA-2pr6-76vf-7546",
+        "PkgName": "js-yaml",
+        "InstalledVersion": "3.2.7",
+        "FixedVersion": "3.13.0",
+        "Layer": {
+          "DiffID": "sha256:be134adad1e54d8fff4bc4b32a0857af99e3b17ca9d2573ed626fe71f70eae08"
+        },
+        "PrimaryURL": "https://github.com/advisories/GHSA-2pr6-76vf-7546",
+        "Title": "Denial of Service in js-yaml",
+        "Description": "Versions of `js-yaml` prior to 3.13.0 are vulnerable to Denial of Service. By parsing a carefully-crafted YAML file, the node process stalls and may exhaust system resources leading to a Denial of Service.\n\n\n## Recommendation\n\nUpgrade to version 3.13.0.",
+        "Severity": "MEDIUM",
+        "References": [
+          "https://github.com/advisories/GHSA-2pr6-76vf-7546",
+          "https://github.com/nodeca/js-yaml/issues/475"
+        ]
+      },
+      {
+        "VulnerabilityID": "CVE-2016-10540",
+        "PkgName": "minimatch",
+        "InstalledVersion": "0.3.0",
+        "FixedVersion": "3.0.2",
+        "Layer": {
+          "DiffID": "sha256:be134adad1e54d8fff4bc4b32a0857af99e3b17ca9d2573ed626fe71f70eae08"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2016-10540",
+        "Title": "Regular Expression Denial of Service in minimatch",
+        "Description": "Minimatch is a minimal matching utility that works by converting glob expressions into JavaScript `RegExp` objects. The primary function, `minimatch(path, pattern)` in Minimatch 3.0.1 and earlier is vulnerable to ReDoS in the `pattern` parameter.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-20"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+            "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V2Score": 5,
+            "V3Score": 7.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10540",
+          "https://github.com/advisories/GHSA-hxm2-r34f-qmc5",
+          "https://nodesecurity.io/advisories/118",
+          "https://nvd.nist.gov/vuln/detail/CVE-2016-10540"
+        ],
+        "PublishedDate": "2018-05-31T20:29:00Z",
+        "LastModifiedDate": "2019-10-09T23:16:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2016-10540",
+        "PkgName": "minimatch",
+        "InstalledVersion": "2.0.10",
+        "FixedVersion": "3.0.2",
+        "Layer": {
+          "DiffID": "sha256:be134adad1e54d8fff4bc4b32a0857af99e3b17ca9d2573ed626fe71f70eae08"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2016-10540",
+        "Title": "Regular Expression Denial of Service in minimatch",
+        "Description": "Minimatch is a minimal matching utility that works by converting glob expressions into JavaScript `RegExp` objects. The primary function, `minimatch(path, pattern)` in Minimatch 3.0.1 and earlier is vulnerable to ReDoS in the `pattern` parameter.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-20"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+            "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V2Score": 5,
+            "V3Score": 7.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10540",
+          "https://github.com/advisories/GHSA-hxm2-r34f-qmc5",
+          "https://nodesecurity.io/advisories/118",
+          "https://nvd.nist.gov/vuln/detail/CVE-2016-10540"
+        ],
+        "PublishedDate": "2018-05-31T20:29:00Z",
+        "LastModifiedDate": "2019-10-09T23:16:00Z"
+      },
+      {
+        "VulnerabilityID": "CVE-2016-10540",
+        "PkgName": "minimatch",
+        "InstalledVersion": "1.0.0",
+        "FixedVersion": "3.0.2",
+        "Layer": {
+          "DiffID": "sha256:be134adad1e54d8fff4bc4b32a0857af99e3b17ca9d2573ed626fe71f70eae08"
+        },
+        "SeveritySource": "nvd",
+        "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2016-10540",
+        "Title": "Regular Expression Denial of Service in minimatch",
+        "Description": "Minimatch is a minimal matching utility that works by converting glob expressions into JavaScript `RegExp` objects. The primary function, `minimatch(path, pattern)` in Minimatch 3.0.1 and earlier is vulnerable to ReDoS in the `pattern` parameter.",
+        "Severity": "HIGH",
+        "CweIDs": [
+          "CWE-20"
+        ],
+        "CVSS": {
+          "nvd": {
+            "V2Vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+            "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "V2Score": 5,
+            "V3Score": 7.5
+          }
+        },
+        "References": [
+          "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10540",
+          "https://github.com/advisories/GHSA-hxm2-r34f-qmc5",
+          "https://nodesecurity.io/advisories/118",
+          "https://nvd.nist.gov/vuln/detail/CVE-2016-10540"
+        ],
+        "PublishedDate": "2018-05-31T20:29:00Z",
+        "LastModifiedDate": "2019-10-09T23:16:00Z"
+      },
+      {
+        "VulnerabilityID": "NSWG-ECO-118",
+        "PkgName": "minimatch",
+        "InstalledVersion": "0.3.0",
+        "FixedVersion": "\u003e=3.0.2",
+        "Layer": {
+          "DiffID": "sha256:be134adad1e54d8fff4bc4b32a0857af99e3b17ca9d2573ed626fe71f70eae08"
+        },
+        "SeveritySource": "nodejs-security-wg",
+        "Title": "Regular Expression Denial of Service",
+        "Description": "Minimatch is a minimal matching utility that works by converting glob expressions into JavaScript `RegExp` objects.  The primary function, `minimatch(path, pattern)` is vulnerable to ReDoS in the `pattern` parameter.  This is because of the regular expression on line 521 of minimatch.js: `/((?:\\\\{2})*)(\\\\?)\\|/g,`.  The problematic portion of the regex is `((?:\\\\{2})*)` which matches against `\\\\`.\n\nA proof of concept is as follows:\n```\nvar minimatch = require(“minimatch”);\n\n// utility function for generating long strings\nvar genstr = function (len, chr) {\n  var result = “”;\n  for (i=0; i\u003c=len; i++) {\n    result = result + chr;\n  }\n  return result;\n}\n\nvar exploit = “[!” + genstr(1000000, “\\\\”) + “A”;\n\n// minimatch exploit.\nconsole.log(“starting minimatch”);\nminimatch(“foo”, exploit);\nconsole.log(“finishing minimatch”);\n```",
+        "Severity": "HIGH",
+        "References": [
+          "https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS"
+        ]
+      },
+      {
+        "VulnerabilityID": "NSWG-ECO-118",
+        "PkgName": "minimatch",
+        "InstalledVersion": "2.0.10",
+        "FixedVersion": "\u003e=3.0.2",
+        "Layer": {
+          "DiffID": "sha256:be134adad1e54d8fff4bc4b32a0857af99e3b17ca9d2573ed626fe71f70eae08"
+        },
+        "SeveritySource": "nodejs-security-wg",
+        "Title": "Regular Expression Denial of Service",
+        "Description": "Minimatch is a minimal matching utility that works by converting glob expressions into JavaScript `RegExp` objects.  The primary function, `minimatch(path, pattern)` is vulnerable to ReDoS in the `pattern` parameter.  This is because of the regular expression on line 521 of minimatch.js: `/((?:\\\\{2})*)(\\\\?)\\|/g,`.  The problematic portion of the regex is `((?:\\\\{2})*)` which matches against `\\\\`.\n\nA proof of concept is as follows:\n```\nvar minimatch = require(“minimatch”);\n\n// utility function for generating long strings\nvar genstr = function (len, chr) {\n  var result = “”;\n  for (i=0; i\u003c=len; i++) {\n    result = result + chr;\n  }\n  return result;\n}\n\nvar exploit = “[!” + genstr(1000000, “\\\\”) + “A”;\n\n// minimatch exploit.\nconsole.log(“starting minimatch”);\nminimatch(“foo”, exploit);\nconsole.log(“finishing minimatch”);\n```",
+        "Severity": "HIGH",
+        "References": [
+          "https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS"
+        ]
+      },
+      {
+        "VulnerabilityID": "NSWG-ECO-118",
+        "PkgName": "minimatch",
+        "InstalledVersion": "1.0.0",
+        "FixedVersion": "\u003e=3.0.2",
+        "Layer": {
+          "DiffID": "sha256:be134adad1e54d8fff4bc4b32a0857af99e3b17ca9d2573ed626fe71f70eae08"
+        },
+        "SeveritySource": "nodejs-security-wg",
+        "Title": "Regular Expression Denial of Service",
+        "Description": "Minimatch is a minimal matching utility that works by converting glob expressions into JavaScript `RegExp` objects.  The primary function, `minimatch(path, pattern)` is vulnerable to ReDoS in the `pattern` parameter.  This is because of the regular expression on line 521 of minimatch.js: `/((?:\\\\{2})*)(\\\\?)\\|/g,`.  The problematic portion of the regex is `((?:\\\\{2})*)` which matches against `\\\\`.\n\nA proof of concept is as follows:\n```\nvar minimatch = require(“minimatch”);\n\n// utility function for generating long strings\nvar genstr = function (len, chr) {\n  var result = “”;\n  for (i=0; i\u003c=len; i++) {\n    result = result + chr;\n  }\n  return result;\n}\n\nvar exploit = “[!” + genstr(1000000, “\\\\”) + “A”;\n\n// minimatch exploit.\nconsole.log(“starting minimatch”);\nminimatch(“foo”, exploit);\nconsole.log(“finishing minimatch”);\n```",
+        "Severity": "HIGH",
+        "References": [
+          "https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS"
+        ]
+      }
+    ]
+  }
+]
